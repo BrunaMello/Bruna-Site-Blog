@@ -1,12 +1,58 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
+<html lang="pt-br" xmlns:th="thymeleaf.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="thymeleaf.org ">
+
+
+<head th:replace="~{base :: head}"></head>
+
 <body>
 
-<h5>Ola mundo testando!!!!</h5>
+<nav class="navbar navbar-light navbar-expand-lg fixed-top bg-secondary text-uppercase" id="mainNavBlog">
+    <div class="container"><a class="navbar-brand js-scroll-trigger" href="#page-top">Bruna Mello</a><button data-toggle="collapse" data-target="#navbarResponsive" class="navbar-toggler navbar-toggler-right text-uppercase bg-primary text-white rounded" aria-controls="navbarResponsive"
+                                                                                                             aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars"></i></button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="nav navbar-nav ml-auto">
+                <li class="nav-item mx-0 mx-lg-1" role="presentation"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="/home">Home</a></li>
+                <li class="nav-item mx-0 mx-lg-1" role="presentation"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#about">Todos os Posts</a></li>
+                <li class="nav-item mx-0 mx-lg-1" role="presentation"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#contact">Nova Postagem</a></li>
 
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<section>
+
+    <div class="container" style="width: 60%; padding-bottom: 30px">
+
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb" style="background-color: white; padding-left: 0px;">
+                <li class="breadcrumb-item active" aria-current="page">Posts</li>
+            </ol>
+
+        </nav>
+
+        <div class="card shadow-sm bg-white rounded" style="margin-top: 20px" th:each="post : ${posts}">
+            <div class="card-body">
+                <p class="card-subtitle mb-2 text-muted" style="font-size: 0.8rem">
+                    <span th:text="${post.autor}"></span>
+                    <span th:text="${post.data}"></span>
+                </p>
+
+                <a th:href="${(#mvc.url('CC#getPostDetails').arg(0, post.id)).build()}"><h4 class="card-title" style="font-weight: bold; color: black; padding-top: 5px;">
+                    <span th:text="${post.titulo}"></span>
+                </h4>
+                </a>
+
+                <p class="card-text">
+                    <span th:utext="${#strings.abbreviate(post.texto,400)}"></span>
+                </p>
+            </div>
+        </div>
+
+
+    </div>
+
+</section>
 </body>
 </html>

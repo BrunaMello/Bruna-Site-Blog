@@ -9456,3 +9456,62 @@ a:hover {
     text-align: center;
 }
 
+#mainNavBlog {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    font-weight: 800;
+    font-family: Montserrat;
+}
+#mainNavBlog .navbar-brand {
+    color: #fff;
+}
+#mainNavBlog .navbar-nav {
+    margin-top: 1rem;
+    letter-spacing: 0.0625rem;
+}
+#mainNavBlog .navbar-nav li.nav-item a.nav-link {
+    color: #fff;
+}
+#mainNavBlog .navbar-nav li.nav-item a.nav-link:hover {
+    color: #D687BA;
+}
+#mainNavBlog .navbar-nav li.nav-item a.nav-link:active,
+#mainNavBlog .navbar-nav li.nav-item a.nav-link:focus {
+    color: #fff;
+}
+#mainNavBlog .navbar-nav li.nav-item a.nav-link.active {
+    color: #D687BA;
+}
+#mainNavBlog .navbar-toggler {
+    font-size: 80%;
+    padding: 0.8rem;
+}
+@media (min-width: 992px) {
+    #mainNavBlog {
+        padding-top: 1.5rem;
+        padding-bottom: 1.5rem;
+        transition: padding-top 0.3s, padding-bottom 0.3s;
+    }
+    #mainNavBlog .navbar-brand {
+        font-size: 2em;
+        transition: font-size 0.3s;
+    }
+    #mainNavBlog .navbar-nav {
+        margin-top: 0;
+    }
+    #mainNavBlog .navbar-nav > li.nav-item > a.nav-link.active,
+    #mainNavBlog .navbar-nav > li.nav-item > a.nav-link.active:active,
+    #mainNavBlog .navbar-nav > li.nav-item > a.nav-link.active:focus,
+    #mainNavBlog .navbar-nav > li.nav-item > a.nav-link.active:hover {
+        color: #fff;
+        background: #D687BA;
+    }
+    #mainNavBlog.navbar-shrink {
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+    }
+    #mainNavBlog.navbar-shrink .navbar-brand {
+        font-size: 1.5em;
+    }
+}
+
