@@ -11,4 +11,6 @@ public interface BlogService {
     Post findById(long id);
 
     Post save(Post post);
+
+
 }
